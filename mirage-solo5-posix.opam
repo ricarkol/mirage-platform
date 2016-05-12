@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer:   "anil@recoil.org"
+authors:      "The MirageOS team"
+homepage:     "https://github.com/mirage/mirage-platform"
+bug-reports:  "https://github.com/mirage/mirage-platform/issues/"
+dev-repo:     "https://github.com/mirage/mirage-platform.git"
+
+build:   [make "solo5-posix-build"]
+install: [make "solo5-posix-install" "PREFIX=%{prefix}%"]
+remove:  [make "solo5-posix-uninstall" "PREFIX=%{prefix}%"]
+
+depends: [
+  "conf-pkg-config"
+]
+available: [ ocaml-version >= "4.01.0" & os = "linux" ]

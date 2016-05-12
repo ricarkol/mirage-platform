@@ -62,6 +62,15 @@ xen-ocaml-install:
 xen-ocaml-uninstall:
 	cd xen-ocaml && $(MAKE) uninstall
 
+solo5-ocaml-build:
+	cd solo5-ocaml && $(MAKE) build
+
+solo5-ocaml-install:
+	cd solo5-ocaml && $(MAKE) install
+
+solo5-ocaml-uninstall:
+	cd solo5-ocaml && $(MAKE) uninstall
+
 xen-posix-build:
 	cd xen-posix && $(MAKE) build
 
@@ -70,6 +79,15 @@ xen-posix-install:
 
 xen-posix-uninstall:
 	cd xen-posix && $(MAKE) uninstall
+
+solo5-posix-build:
+	cd solo5-posix && $(MAKE) build
+
+solo5-posix-install:
+	cd solo5-posix && $(MAKE) install
+
+solo5-posix-uninstall:
+	cd solo5-posix && $(MAKE) uninstall
 
 IMAGE = mirage-xen
 

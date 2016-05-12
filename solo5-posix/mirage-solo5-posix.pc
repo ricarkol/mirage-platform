@@ -1,0 +1,12 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+includedir=${prefix}/include/mirage-solo5-posix/include
+libdir=${exec_prefix}/lib
+
+Name: mirage-solo5-posix
+Version: 2.0.1
+URL: https://github.com/djwillia/mirage-platform/
+Description: Minimal POSIX-like definitions for Mirage/Solo5
+Cflags: -I${includedir}
+Libs: ${libdir}/mirage-solo5-posix/libsolo5posix.a
+Requires: openlibm

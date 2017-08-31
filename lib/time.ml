@@ -68,7 +68,8 @@ let new_sleeps = ref []
 
 let sleep_ns d =
   let (res, w) = Lwt.task () in
-  let t = Monotonic.(time () + of_nanoseconds d) in
+  (* optimize the sleep_ns(0) case, so we don't make that time() call below  *)
+  let t = if d > 0L then Monotonic.(time () + of_nanoseconds d) else Monotonic.(0L) in
   let sleeper = { time = t; canceled = false; thread = w } in
   new_sleeps := sleeper :: !new_sleeps;
   Lwt.on_cancel res (fun _ -> sleeper.canceled <- true);
